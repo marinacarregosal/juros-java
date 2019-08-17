@@ -6,13 +6,189 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Juros</title>
+        <title>Projeto Juros</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous" >
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+            html {
+                font-family: 'Nunito', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                min-height: 100%;
+            }
+
+            body {
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+                padding: 0 300px;
+                height: 100%;
+                background: #c850c0;
+                background: -webkit-linear-gradient(45deg,#4158d0,#c850c0);
+                color: #fff;
+                 background-repeat: no-repeat;
+            }
+
+            .card {
+                background-color: white;
+                border-radius: 4px;
+                box-shadow: 12px 12px 15px rgba(46, 61, 73, 0.4);
+                color: #36304a;
+            }
+            
+            .categories .card {
+                width: 43%;
+                padding: 20px;
+            }
+            
+            .categories p {
+                color: gray;
+            }
+            
+            .team .card {
+                width: 30%;
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .team .card h4 {
+                margin: 0;
+                font-size: 20px;
+                padding: 3px 0;
+                text-align: center;
+            }
+
+            .team, .categories {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+            }
+
+            .team .card img {
+                width: 100%;
+            }
+
+            .fa {
+                font-size: 20px;
+                padding: 0px 2px;
+            }
+            
+            .categories {
+                margin-bottom: 60px;
+            }
+            
+            .categories h2 {
+                margin: 0;
+                text-align: center;
+            }
+            
+            #juros-simples, #juros-composto {
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+            }
+            
+            #juros-simples:hover, #juros-composto:hover {
+                transform: scale(1.1);
+            }
+            
+            .hidden-div {
+                visibility: hidden;
+                width: 30%;
+            }
+
+        </style>
     </head>
     <body>
         <div>
-        <h4><a href="juros-composto.html">Juros Composto</a></h4>
+            <h1>Cálculo de Juros Simples e Composto</h1>
+            <div class="categories">
+                <div class="card" id="juros-simples">
+                    <h2>Juros Simples</h2>
+                    <p>O regime de juros será simples quando o percentual de juros incidir apenas sobre o valor principal. Sobre os juros gerados a cada período não incidirão novos juros. </p>
+                </div>
+                <div class="card" id="juros-composto">
+                     <h2>Juros Composto</h2>
+                     <p>Os juros compostos são a prática de juros sobre juros. Eles são na maioria das vezes usados no sistema financeiro, pois oferecem maior rentabilidade se comparados ao juro simples.</p>
+                </div>
+            </div>
+            
+            <h1>Equipe</h1>
+            <div class="team">
+                <div class="card">
+                    <div class="wrapper">
+                        <img class="profile" alt="Bia" src="res/images/bia.jpeg"/>
+                    </div>
+                    <div>
+                    <h4>Beatriz Diegues</h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="wrapper">
+                        <img class="profile" alt="EliVelton" src="res/images/elivelton.jpeg"/>
+                    </div>
+                    <div>
+                    <h4>Elivelton de Jesus</h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="wrapper">
+                        <img class="profile" alt="Marina" src="res/images/marina.jpeg"/>
+                    </div>
+                    <div>
+                    <h4>Marina Lopes</h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="card second-row">
+                    <div class="wrapper">
+                        <img class="profile" alt="Daniel" src="res/images/user.jpeg"/>
+                    </div>
+                    <div>
+                    <h4>Daniel Barbosa</h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="card second-row">
+                    <div class="wrapper">
+                        <img class="profile" alt="Orlando" src="res/images/user.jpeg"/>
+                    </div>
+                    <div>
+                    <h4>Orlando Silva</h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="hidden-div">
+                    <div class="wrapper">
+                        <img class="profile" alt="Orlando" src="res/images/user.jpeg"/>
+                    </div>
+                    <div>
+                    <h4></h4>
+                    <span class="fa fa-github"></span>
+                    <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <script>
+            document.getElementById("juros-simples").addEventListener('click', function (event) {
+                document.location.href = "/ProjetosJurosJava/juros-simples.html";
+            });
+            
+            document.getElementById("juros-composto").addEventListener('click', function (event) {
+                document.location.href = "/ProjetosJurosJava/juros-composto.html";
+            });
+        </script>
     </body>
 </html>

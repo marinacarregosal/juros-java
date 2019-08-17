@@ -24,34 +24,45 @@ public class Tabela extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Tabela Juros Composto</title>");            
+            out.println("<title>Tabela Juros Composto</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<style>");
             out.println("@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');");
             out.println("html {"
+                    + "font-family: 'Nunito', sans-serif; "
+                    + "-webkit-font-smoothing: antialiased; "
+                    + "}"
+                    + ""
+                    + "body {"
                     + "padding: 0 300px;"
                     + "height: 100%;"
                     + "background: #c850c0; "
                     + "background: -webkit-linear-gradient(45deg,#4158d0,#c850c0); "
                     + "color: #fff; "
-                    + "font-family: 'Nunito', sans-serif; "
-                    + "-webkit-font-smoothing: antialiased; "
                     + "}"
                     + ""
+                    + "a {"
+                    + " color: white;"
+                    + "}"
                     + "table {"
-                    + " border-collapse: collapse;\n" +
-                    "   background: #fff;\n" +
-                    "   border-radius: 4px;\n" +
-                    "   overflow: hidden;\n" +
-                    "   width: 100%;\n" +
-                    "   margin: 0 auto;\n" +
-                    "   position: relative;"
+                    + " border-collapse: collapse;\n"
+                    + "   background: #fff;\n"
+                    + "   border-radius: 4px;\n"
+                    + "   box-shadow: 12px 12px 15px rgba(46, 61, 73, 0.4);"
+                    + "   overflow: hidden;\n"
+                    + "   width: 100%;\n"
+                    + "   margin: 0 auto;\n"
+                    + "   position: relative;"
+                    + "   margin-bottom: 100px;"
                     + "}"
                     + ""
+                    + "tr:nth-child(odd) {"
+                    + "background-color: #f5f5f5"
+                    + "}"
                     + "tr:first-child {"
-                     + "height: 60px;" +
-                        "background: #36304a;"
+                    + "height: 60px;"
+                    + "background: #36304a;"
                     + "}"
                     + ""
                     + "tr:not(:first-child) {"
@@ -79,41 +90,56 @@ public class Tabela extends HttpServlet {
                     + ""
                     + ".error a {"
                     + " color: white;"
-                    + " font-size: 1.17em;\n" +
-                      " text-decoration: underline;\n" +
-                      " margin-block-start: 1em;\n" +
-                      " margin-block-end: 1em;\n" +
-                      " margin-inline-start: 0px;\n" +
-                      " margin-inline-end: 0px;"
-                    + " font-weight: bold;"      
+                    + " font-size: 1.17em;\n"
+                    + " text-decoration: underline;\n"
+                    + " margin-block-start: 1em;\n"
+                    + " margin-block-end: 1em;\n"
+                    + " margin-inline-start: 0px;\n"
+                    + " margin-inline-end: 0px;"
+                    + " font-weight: bold;"
+                    + "}"
+                    + ""
+                    + ".go-top {"
+                    + "    position: fixed;"
+                    + "    background-color: #5449aa;"
+                    + "    right: 0;"
+                    + "    bottom: 0;"
+                    + "    border-radius: 50%;"
+                    + "    padding: 20px 15px;"
+                    + "    font-weight: 700;"
+                    + "    margin: 20px;"
+                    + "    cursor: pointer;"
+                    + "    box-shadow: 5px 5px 10px rgba(46, 61, 73, 0.4);"
                     + "}");
             out.println("</style>");
 
             // TODO: Alterar nome da tabela dinamicamente. A página deve aceitar os dois tipos de juros.
-            out.println("<h1>Tabela de Juros Composto</h1>");
+            out.println("<a href='/ProjetosJurosJava'>< Voltar para a home</a>"
+                    + "<h1 id=''>Tabela de Juros Composto</h1>");
+            out.println("<div onclick=\"window.scrollTo(0, 0);\" class='go-top'><span>TOPO</span></div>");
             try {
                 float v = Float.parseFloat(request.getParameter("valor"));
                 float j = Float.parseFloat(request.getParameter("juros"));
                 float t = Integer.parseInt(request.getParameter("temp"));
                 float total = 0;
-                j = j/100;
-               out.println("<table>");
-               out.println("<tr>");
-               out.println("<th>Total</thead>");
-               out.println("<th>Mês</thead>");
-               out.println("</tr>");
-               for (int i = 1; i<=t; ++i){
-               total = v+=(j*v);
-
+                j = j / 100;
+                out.println("<table>");
                 out.println("<tr>");
+                out.println("<th>Total</thead>");
+                out.println("<th>Mês</thead>");
+                out.println("</tr>");
+                for (int i = 1; i <= t; ++i) {
+                    total = v += (j * v);
 
-                out.println("<td>R$ "+total+"</td>");
-                out.println("<td>"+i+"</td>");  
-        }
-               out.println("<tbody>");
-               out.println("</table>");   
+                    out.println("<tr>");
+
+                    out.println("<td>R$ " + total + "</td>");
+                    out.println("<td>" + i + "</td>");
+                }
+                out.println("<tbody>");
+                out.println("</table>");
             } catch (Exception e) {
-                  out.println("<div class='error'><h3> Parâmetros "+" inválidos!</h3> <a href='/ProjetosJurosJava'> Clique aqui para voltar para a home.</a>");
+                out.println("<div class='error'><h3> Parâmetros " + " inválidos!</h3> <a href='/ProjetosJurosJava'> Clique aqui para voltar para a home.</a>");
             }
 
             out.println("</html>");

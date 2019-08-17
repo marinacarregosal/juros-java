@@ -33,75 +33,79 @@ public class JurosComposto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Juros Composto</title>");            
+            out.println("<title>Juros Composto</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<style>");
             out.println("@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');");
             out.println("html {"
-                    + "padding: 0 300px;"
                     + "height: 100%;"
-                    + "background: #c850c0; "
-                    + "background: -webkit-linear-gradient(45deg,#4158d0,#c850c0); "
-                    + "color: #fff; "
                     + "font-family: 'Nunito', sans-serif; "
                     + "-webkit-font-smoothing: antialiased; "
                     + "}"
                     + ""
-                    + "a {"
-                    +   "color: white;"
+                    + "body {"
+                        + "margin: 0;"
+                        + "padding: 0 300px;"
+                        + "height: 100%;"
+                        + "background: #c850c0; "
+                        + "background: -webkit-linear-gradient(45deg,#4158d0,#c850c0); "
+                        + "color: #fff; "
                     + "}"
-                    + "input {" +
-                        "-webkit-box-shadow: none;\n" +
-                        "-moz-box-shadow: none;\n" +
-                        "box-shadow: none;"
-                    +   "border-radius: 4px;"
-                    +   "padding: 5px 10px;"
-                    +   "border: 1px solid #36304a;"
+                    + "a {"
+                    + "color: white;"
+                    + "}"
+                    + "input {"
+                    + "-webkit-box-shadow: none;\n"
+                    + "-moz-box-shadow: none;\n"
+                    + "box-shadow: none;"
+                    + "border-radius: 4px;"
+                    + "padding: 5px 10px;"
+                    + "border: 1px solid #36304a;"
                     + "}"
                     + ""
                     + ".field {"
-                    +   "padding: 5px 0;"
+                    + "padding: 5px 0;"
                     + "}"
                     + ""
                     + ".field label {"
-                    +   "color: #36304a;"
-                    +   "display: block;"
-                    +   "padding-bottom: 3px;"
+                    + "color: #36304a;"
+                    + "display: block;"
+                    + "padding-bottom: 3px;"
                     + "}"
                     + ""
                     + ".main {"
-                    +   "border-radius: 4px;"
-                    +   "background-color: #fff;"
-                    +   "padding: 20px;"
-                    +   "box-shadow: 12px 12px 15px rgba(46, 61, 73, 0.4)"
+                    + "border-radius: 4px;"
+                    + "background-color: #fff;"
+                    + "padding: 20px;"
+                    + "box-shadow: 12px 12px 15px rgba(46, 61, 73, 0.4)"
                     + "}"
                     + ""
                     + ".content {"
-                    +   "display: flex;"
-                    +   "justify-content: space-between;"
+                    + "display: flex;"
+                    + "justify-content: space-between;"
                     + "}"
                     + ""
                     + "button {"
-                    +   "background-color: #36304a;" +
-                        "color: white;" +
-                        "padding: 8px 18px;" +
-                        "border-radius: 4px;" +
-                        "width: 100%;" +
-                        "font-size: 16px;" +
-                        "margin-top: 15px;" +
-                        "cursor: pointer;"
+                    + "background-color: #36304a;"
+                    + "color: white;"
+                    + "padding: 8px 18px;"
+                    + "border-radius: 4px;"
+                    + "width: 100%;"
+                    + "font-size: 16px;"
+                    + "margin-top: 15px;"
+                    + "cursor: pointer;"
                     + "}"
                     + ""
                     + "button:hover {"
-                    +   "background-color: #473f63"
+                    + "background-color: #473f63"
                     + "}"
                     + "</style>");
-            
+
             out.println("<form action='tabela.html'>");
             out.println("<a href='/ProjetosJurosJava'>< Voltar para a home</a>"
                     + "<h1>Cálculo de Juros Composto</h1>");
@@ -122,7 +126,7 @@ public class JurosComposto extends HttpServlet {
             out.println("<input required type=number' name='temp'/>"
                     + "</div>"
                     + "</div>"
-                     + "<button type='submit' value='Calcular'>Calcular</button>"
+                    + "<button type='submit' value='Calcular'>Calcular</button>"
                     + "</div>");
             out.println("");
             out.println("</form>");
