@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Projeto Juros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous" >
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+            html {
+                font-family: 'Nunito', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                min-height: 100%;
+            }
+            *{ text-align: center;}
+           
+            body {
+                 height: 100%;
+                margin: 0;
+                padding: 0 300px;
+                height: 100%;
+                background: #c850c0;
+                background: -webkit-linear-gradient(45deg,#4158d0,#c850c0);
+                color: #fff;
+                 background-repeat: no-repeat;
+            }
+            .titulo{ 
+                margin-top: 10%;
+                font-size: 200%;
+            }
+            .card {
+                background-color: white;
+                border-radius: 4px;
+                box-shadow: 12px 12px 15px rgba(46, 61, 73, 0.4);
+                color: #36304a;
+            }
+            
+            .categories .card {
+                width: 43%;
+                padding: 20px;
+                margin: 0% 25%;
+            }
+           
+
+            .categories h2 {
+                margin: 0;
+                text-align: center;
+            }
+            
+            #acesso {
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+            }
+            
+            #acesso:hover{
+                transform: scale(1.1);
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="titulo">
+            <h5>Programação Orientada a Objetos</h5>
+            <h1>PROJETO 01</h1>
+            </div>
+            <div class="categories">
+                <div class="card" id="acesso">
+                    <h2>Entrar</h2>
+                    </div>
+            </div>
+            
+        </div>   
+        
+        <script>
+            document.getElementById("acesso").addEventListener('click', function (event) {
+                document.location.href = "/ProjetosJurosJava/home.html";
+            });
+           
+        </script>
+    </body>
+</html>
