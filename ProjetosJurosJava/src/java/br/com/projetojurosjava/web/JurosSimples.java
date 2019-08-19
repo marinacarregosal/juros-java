@@ -109,13 +109,13 @@ public class JurosSimples extends HttpServlet {
                     + "</style>");       
             //link pra retornar pra home
             out.println("<a href='/ProjetosJurosJava/home.html'>< Voltar para a home</a>" + "<h1>Cálculo de Juros Simples</h1>");
-            out.println("<form action='juros-simples.html'>");
+            out.println("<form action='tabela-juros-simples.html'>");
             //estilo do campo valor
             out.println(""
                     + "<div class='main'>"
                     + "<div class='content'>"
                     + "<div class='field'>"
-                    + "<label>Valor</label>");
+                    + "<label>Valor (R$)</label>");
             //campo pra inserir valor
             out.println("<input required type=number' name='valor'/>"
                     + "</div>");
@@ -136,32 +136,7 @@ public class JurosSimples extends HttpServlet {
                     + "<button type='submit' value='Calcular'>Calcular</button>"
                     + "</div>");
             out.println("");
-            //se juros for diferente de vazio
-            if (request.getParameter("juros")!= null){
-                //tente
-                 try {
-                    //cria variavel montate e juros
-                    double montante, juros;
-                    //cria variavel valor, converte pra double
-                    double valor = Double.parseDouble(request.getParameter("valor"));
-                    //cria a variavel taxa e converte pra double
-                    double taxa = Double.parseDouble(request.getParameter("juros"));
-                    //cria a variavel tempo, converte pra inteiro
-                    int tempo = Integer.parseInt(request.getParameter("temp"));                    
-                    //calcular a porcentagem do juros
-                    taxa = taxa / 100;
-                    //variavel juros recebe o valor * porcentagem * tempo 
-                    juros = valor * taxa * tempo;
-                    //o montate será a soma do valor + o calculo do juros
-                    montante = valor + juros;
 
-                    out.println("<h4>Montante: " + String.valueOf(montante) + "</h4>");
-                } catch (Exception e) {
-                    out.println("<h4 style='color: red'>Erro ao converter</h4>");
-                }
-            }
-            
-            out.println("");
             out.println("</form>");
             out.println("</body>");
             out.println("</html>");

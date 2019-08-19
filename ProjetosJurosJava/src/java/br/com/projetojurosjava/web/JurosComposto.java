@@ -113,7 +113,7 @@ public class JurosComposto extends HttpServlet {
                     + "<div class='main'>"
                     + "<div class='content'>"
                     + "<div class='field'>"
-                    + "<label>Valor</label>");
+                    + "<label>Valor (R$)</label>");
             out.println("<input required type=number' name='valor'/>"
                     + "</div>");
             out.println(""
