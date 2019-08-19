@@ -112,12 +112,13 @@ public class Tabela extends HttpServlet {
                     + "    box-shadow: 5px 5px 10px rgba(46, 61, 73, 0.4);"
                     + "}");
             out.println("</style>");
-
+            
             // TODO: Alterar nome da tabela dinamicamente. A página deve aceitar os dois tipos de juros.
             out.println("<a href='/ProjetosJurosJava'>< Voltar para a home</a>"
                     + "<h1 id=''>Tabela de Juros Composto</h1>");
             out.println("<div onclick=\"window.scrollTo(0, 0);\" class='go-top'><span>TOPO</span></div>");
             try {
+                
                 float v = Float.parseFloat(request.getParameter("valor"));
                 float j = Float.parseFloat(request.getParameter("juros"));
                 float t = Integer.parseInt(request.getParameter("temp"));
@@ -139,7 +140,7 @@ public class Tabela extends HttpServlet {
                 out.println("<tbody>");
                 out.println("</table>");
             } catch (Exception e) {
-                out.println("<div class='error'><h3> Parâmetros " + " inválidos!</h3> <a href='/ProjetosJurosJava'> Clique aqui para voltar para a home.</a>");
+                out.println("<div class='error'><h3> Parâmetros " + " inválidos!</h3> <a href='juros-composto.html'> Clique aqui para voltar.</a>");
             }
 
             out.println("</html>");
